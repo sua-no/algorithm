@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let output  = countAllCharacters('');
+
+        function countAllCharacters(string){
+            let answer  = {}, keyArr = [];
+            const arr = string.split('');
+
+            if(string === ''){return answer}
+            for(let i in string){answer[string[i]] = 0;};
+            keyArr = Object.keys(answer);
+
+            for(let i in keyArr){
+                let count = 0;
+                for(let j in arr){
+                    if(keyArr[i] === arr[j]){
+                        count++;
+                        answer[keyArr[i]] = count;                        
+                    }
+                }
+            }
+            return answer;
+        }
+        console.log(output);
+
+    </script>
+</body>
+</html>
